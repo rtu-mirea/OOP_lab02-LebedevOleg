@@ -17,21 +17,16 @@ public class Task1 {
         return text;
     }
     public void changeText(){
-        for(int i = 0;i<text.length();i++)
-        {
-            if(text[i]>= 48)
-        }
         String x[] = text.split("\\.");
         temp1 =new String[x.length][2];
         for(int i= 0; i<x.length;i++){
            String z[] = x[i].split(",");
-           if (z.length>2 || z[0]=="0" && z[1]=="0" || z[0] == "0"){
+           if (z.length>2 || z[0]=="0" && z[1]=="0" || z[0] == "0" || Integer.parseInt(z[0])){
                System.out.print("Ошибка ввода. Введите текст заново.");
                break;
            }
            temp1[i][0] = z[0];
            temp1[i][1] = z[1];
-
         }
 
     }
