@@ -17,11 +17,15 @@ public class Main {
                 text.changeText();
                 break;
             case 2:
+                text = new Task1();
                 text.setText();
                 break;
             case 3:
                 break;
             case 4:
+                System.out.print("Введите систему счисления которая вам интересна: ");
+                n = in.nextInt();
+                text.numSistem(n);
                 break;
             case 5:
                 break;

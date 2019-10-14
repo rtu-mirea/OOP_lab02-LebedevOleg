@@ -1,4 +1,5 @@
 package JaLaba2;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Task1 {
@@ -24,27 +25,45 @@ public class Task1 {
                 }
             }
         }
+        String x[] = text.split("\\.");
+        temp1 =new String[x.length][2];
+        for(int i= 0; i<x.length;i++){
+            String z[] = x[i].split(",");
+            if (z.length>2 || z[0]=="0" && z[1]=="0" || z[0] == "0" ){
+                System.out.print("Ошибка ввода. Введите текст заново.");
+                break;
+            }
+            temp1[i][0] = z[0];
+            temp1[i][1] = z[1];
+        }
     }
     public String getText() {
         return text;
     }
     public void changeText(){
-        String x[] = text.split("\\.");
-        temp1 =new String[x.length][2];
-        for(int i= 0; i<x.length;i++){
-           String z[] = x[i].split(",");
-           if (z.length>2 || z[0]=="0" && z[1]=="0" || z[0] == "0" || Integer.parseInt(z[0])){
-               System.out.print("Ошибка ввода. Введите текст заново.");
-               break;
-           }
-           temp1[i][0] = z[0];
-           temp1[i][1] = z[1];
-        }
         int summ = 0;
-        int t1 = 0, t2 = 0;
+        double t1 = 0, t2 = 0;
         for(int i = 0; i<temp1.length;i++){
-            t2 = Integer.parseInt(temp1[i]);//whyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+            t2 = 0;
+            t1 = Integer.parseInt(temp1[i][1]);
+            for(int y = 0; y< temp1[i][0].length();y++){
+                t2 +=Character.getNumericValue(temp1[i][0].charAt(y))*Math.pow(t1,temp1[i][0].length() - y-1);
+            }
+            summ+=t2;
 
         }
+        System.out.println("Сумма всех чисел = " + summ);
+    }
+    public void numSistem(int n){
+        int res = 0;
+        for(int i = 0; i<temp1.length;i++){
+            if(Integer.parseInt(temp1[i][1]) == n){
+                res++;
+            }
+        }
+        if(res != 0)
+            System.out.println("Колличество чисел " + n + " системы = " + res);
+        else
+            System.out.println("Чисел " + n + " системы нет.");
     }
 }
