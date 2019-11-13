@@ -105,11 +105,31 @@ public class Task1 {
         return res;
     }
     public void summone(){
-        for(int i = 0; i<temp1.length;i++){
-            int t1 = Integer.parseInt(temp1[i][0]);
+        for(int i = 0; i<temp1.length;i++) {
             int t2 = Integer.parseInt(temp1[i][1]);
-            int temp;
+            if (t2 <= 10) {
+                int t1 = Integer.parseInt(temp1[i][0]);
+
+                String temp = "";
+                while (t1 != 0) {
+                    if (t1 % 10 < t2 - 1) {
+                        temp = String.valueOf(t1 % 10 + 1) + temp;
+                        t1 /= 10;
+                    } else {
+                        temp = String.valueOf(t1 % 10) + temp;
+                        t1 /= 10;
+                    }
+                }
+                temp1[i][0] = temp;
+                text = "";
+                for (int x = 0; x < temp1.length; x++) {
+                    text += temp1[x][0] + "," + temp1[x][1] + ".";
+                }
+            }
+            else {
+                System.out.println("не работает с системами счисления выше 10");
             }
         }
     }
+}
 

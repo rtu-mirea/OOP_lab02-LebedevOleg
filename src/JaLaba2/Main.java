@@ -27,7 +27,6 @@ public class Main {
                             break;
                         case 3:
                             text.summone();
-                            System.out.println(text.getText());
                             break;
                         case 4:
                             System.out.print("Введите систему счисления которая вам интересна: ");
@@ -46,7 +45,29 @@ public class Main {
             case 2:
                 boolean OK1 = true;
                 Task2 text1 = new Task2();
-                text1.settext();
+                text1.setText();
+                while (OK1){
+                    System.out.println("Текущий текст: " + text1.getText());
+                    System.out.println("1.Увеличить каждую цифру на 1\n2.Изменить текст\n3.Найти сумму всех чисел 8 cc\n4.заменить 10 сс на 16 сс\n5.Выход");
+                    n = in.nextInt();
+                    switch (n){
+                        case 1:
+                            text1.summone();
+                            break;
+                        case 2:
+                            text1.setText();
+                            break;
+                        case 3:
+                            System.out.println( text1.summ());
+                            break;
+                        case 4:
+                            System.out.println( text1.zamena());
+                            break;
+                        case 5:
+                            OK1 = false;
+                            break;
+                    }
+                }
                 break;
             case 3:
                 ok = false;
