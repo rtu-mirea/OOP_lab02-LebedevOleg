@@ -17,7 +17,7 @@ public class Task1 {
             text = in.nextLine();
             OK = false;
             for (int i = 0; i < text.length(); i++) {
-                if ((text.charAt(i) >= 48 && text.charAt(i) <= 57 || temp1[i][0].charAt(i)>=65 && temp1[i][0].charAt(i)<=70) || (temp1[i][0].charAt(i)>=97 && temp1[i][0].charAt(i)<=102) || text.charAt(i) == 46 || text.charAt(i) == 44);
+                if ((text.charAt(i) >= 48 && text.charAt(i) <= 57 || text.charAt(i)>=65 && text.charAt(i)<=70) || (text.charAt(i)>=97 && text.charAt(i)<=102) || text.charAt(i) == 46 || text.charAt(i) == 44);
                 else {
                     System.out.println("Вы не правильно ввели текст. Пожалуйста введите число ',' система счисления '.' следующее число если нужно");
                     OK = true;
@@ -96,4 +96,20 @@ public class Task1 {
         else
             System.out.println("Чисел " + n + " системы нет.");
     }
-}
+    public String newtext(){
+        String res = "";
+        for(int i = 0; i<temp1.length;i++){
+            if(Integer.parseInt(temp1[i][1]) == 16)
+                res += temp1[i][0] + " ";
+        }
+        return res;
+    }
+    public void summone(){
+        for(int i = 0; i<temp1.length;i++){
+            int t1 = Integer.parseInt(temp1[i][0]);
+            int t2 = Integer.parseInt(temp1[i][1]);
+            int temp;
+            }
+        }
+    }
+
