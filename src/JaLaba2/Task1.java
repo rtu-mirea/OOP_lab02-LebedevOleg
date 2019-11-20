@@ -15,6 +15,8 @@ public class Task1 {
         System.out.println("Введите текс из чисел(числа разделяются ТОЛЬКО точкой).После числа через запятую пишется система счисления");
         while (OK) {
             text = in.nextLine();
+            if(text.charAt((text.length()-1)) != '.')
+                text += ".";
             OK = false;
             for (int i = 0; i < text.length(); i++) {
                 if ((text.charAt(i) >= 48 && text.charAt(i) <= 57 || text.charAt(i)>=65 && text.charAt(i)<=70) || (text.charAt(i)>=97 && text.charAt(i)<=102) || text.charAt(i) == 46 || text.charAt(i) == 44);
