@@ -49,9 +49,9 @@ public class Task1 {
             t2 = 0;
             t1 = Integer.parseInt(temp1[i][1]);
             for(int y = 0; y< temp1[i][0].length();y++){
-                if(t1<10)
+                if(t1<=10)
                     t2 +=Character.getNumericValue(temp1[i][0].charAt(y))*Math.pow(t1,temp1[i][0].length() - y-1);
-                else if (t1>=10 && (temp1[i][0].charAt(y)>=65 && temp1[i][0].charAt(y)<=70) || (temp1[i][0].charAt(y)>=97 && temp1[i][0].charAt(y)<=102))
+                else if (t1>=11 && (temp1[i][0].charAt(y)>=65 && temp1[i][0].charAt(y)<=70) || (temp1[i][0].charAt(y)>=97 && temp1[i][0].charAt(y)<=102))
                 {
                     switch (temp1[i][0].charAt(y))
                     {
@@ -78,8 +78,11 @@ public class Task1 {
                             if(t1>14)
                             t2 +=15*Math.pow(t1,temp1[i][0].length() - y-1);
                             break;
+
                     }
                 }
+                else
+                    t2 +=Character.getNumericValue(temp1[i][0].charAt(y))*Math.pow(t1,temp1[i][0].length() - y-1);
             }
             summ+=t2;
 
